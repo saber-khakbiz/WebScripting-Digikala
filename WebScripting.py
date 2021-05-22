@@ -3,7 +3,7 @@ from persiantools import digits
 from bs4 import BeautifulSoup
 import requests
 import re
-
+import sys
 
 
 #*Geneal list and Variable
@@ -14,6 +14,14 @@ brand_lst=[]    #?  List ALL Name of Memorey Ram
 con=1           #?  counter for countering number Ram on Each Page
 
 
+
+#*animate processing
+print("\nProcessing, Please Wait..")
+animation = ["[□□□□□□□□□]", "[■□□□□□□□□□]","[■■□□□□□□□□]", "[■■■□□□□□□□]", "[■■■■□□□□□□]", "[■■■■■□□□□□]", "[■■■■■■□□□□]", "[■■■■■■■□□□]", "[■■■■■■■■□□]", "[■■■■■■■■■□]", "[■■■■■■■■■■]"]
+S=len(animation)
+step=S-N
+sys.stdout.write("\r" + animation[0])
+sys.stdout.flush()
 
 
 
@@ -45,6 +53,14 @@ for b in zip([i for i in x if x.index(i)%2],[j for j in x if not x.index(j)%2]):
 
 
 
+#*first animate processing element
+sys.stdout.write("\r" + animation[1])
+sys.stdout.flush()
+
+
+
+
+
 #!<<<<<<<<<<<<<<<<<< Pull and save Ram Propertiy DATA >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 for page in range(1,N):
@@ -57,6 +73,12 @@ for page in range(1,N):
     Ram_cost=main.find_all(class_ = "c-price__value-wrapper")  
     
     
+    #*animate processing
+    count=page+step
+    sys.stdout.write("\r" + animation[count])
+    sys.stdout.flush()
+
+
 
     for p,c in zip(Ram_propeity,Ram_cost):
         #* Text of Ram
