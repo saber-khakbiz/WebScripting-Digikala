@@ -2,7 +2,7 @@
 
 from tkinter.constants import ACTIVE
 from typing import DefaultDict
-import mysql.connector
+
 import tkinter as tk
 
 window =tk.Tk()
@@ -91,25 +91,6 @@ window.mainloop()
 
 
 
-
-# cnx = mysql.connector.connect(user=User, password=PassWord,
-#                               host=Host,
-#                               database=DataBase)
-
-# mycursor=cnx.cursor()
-
-# mycursor.execute(f"CREATE DATABASE IF NOT EXISTS {DataBase}")
-# mycursor.execute(f'''
-#                     CREATE TABLE IF NOT EXISTS {tb} (  NameBrand VARCHAR(255),
-#                                         Capacity INT(255), 
-#                                         DDRX INT(255), 
-#                                         Frequency INT(255),
-#                                         Price INT(255))
-#                                         ''')
-# def SqlConnection(sql, val):
-#     mycursor.execute(sql, val)
-
-
-
-# cnx.commit()
-# cnx.close()
+if (DataBase=="" or tb==""):
+    print("\n please enter Database or tabel name!\n")
+    exit()
