@@ -7,6 +7,7 @@ import tkinter as tk
 
 window =tk.Tk()
 window.geometry("300x200")
+window.resizable(width = False, height = False)
 window.title("SQL Configuration")
 
 User_var = tk.StringVar()
